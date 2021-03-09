@@ -4,6 +4,7 @@ import * as React from 'react';
 import { ColorSchemeName, View, Image } from 'react-native';
 import { MaterialCommunityIcons, Octicons  } from '@expo/vector-icons';
 
+import ContactsScreen from '../screens/ContactsScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
 import { RootStackParamList } from '../types';
@@ -66,6 +67,10 @@ function RootNavigator() {
           )
             
         })}
+      />
+      <Stack.Screen 
+        name="Contacts"
+        component={ContactsScreen}
       />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
