@@ -3,9 +3,10 @@ export type RootStackParamList = {
   NotFound: undefined;
 };
 
-export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+export type TopTabParamList = {
+  Camera: undefined;
+  Chats: undefined;
+  Status: undefined;
 };
 
 export type TabOneParamList = {
