@@ -1,10 +1,11 @@
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme, useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, View } from 'react-native';
+import { ColorSchemeName, View, Image } from 'react-native';
 import { MaterialCommunityIcons, Octicons  } from '@expo/vector-icons';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 import { RootStackParamList } from '../types';
 import TabNavigator from './TabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -52,6 +53,20 @@ function RootNavigator() {
             </View>
           )
         }} />
+      <Stack.Screen 
+        name="ChatRoom" 
+        component={ChatRoomScreen} 
+        options={({ route }) => ({
+          title: route.params.name,
+          headerRight: () => (
+            // touchableopacity & add functionality
+            <View>
+              <MaterialCommunityIcons name="dots-vertical" size={22} color={'white'} />
+            </View>
+          )
+            
+        })}
+      />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
