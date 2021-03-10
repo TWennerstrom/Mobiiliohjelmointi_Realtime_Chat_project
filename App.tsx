@@ -42,7 +42,6 @@ function App() {
         )
 
         if (userData.data.getUser) {
-          console.log("User already registered");
           return;
         }
 
