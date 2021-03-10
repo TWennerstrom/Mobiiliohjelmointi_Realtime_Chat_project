@@ -6,13 +6,14 @@ import styles from '../ChatMessage/style';
 
 export type ChatMessageProps = {
     message: Message;
+    myID: String,
 }
 
 const ChatMessage = (props: ChatMessageProps) => {
-    const { message } = props;
+    const { message, myID } = props;
 
     const isMyMessage = () => {
-        return message.user.id === 'u1';
+        return message.user.id === myID;
     }
 
     return (
