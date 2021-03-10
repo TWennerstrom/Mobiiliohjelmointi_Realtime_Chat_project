@@ -12,8 +12,6 @@ const ChatRoomScreen = () => {
 
     const route = useRoute();
 
-
-
     return (
         <ImageBackground style={{width: '100%', height: '100%'}}  source={BG}>
             <FlatList 
@@ -22,7 +20,7 @@ const ChatRoomScreen = () => {
                 inverted
                 keyExtractor={(item) => item.id}
             />
-            <InputBox />
+            <InputBox chatRoomID={route.params.id}/>
         </ImageBackground>
     )
 }
