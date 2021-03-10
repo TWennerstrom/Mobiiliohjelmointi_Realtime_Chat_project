@@ -31,11 +31,9 @@ function App() {
 
   useEffect ( () => {
     const fetchUser = async () => {
-      // Get Authenticated user
       const userInfo = await Auth.currentAuthenticatedUser({bypassCache: true});
 
       if (userInfo) {
-      // Get the user from Backend with user IF from Auth
         const userData = await API.graphql(
           graphqlOperation(
             getUser,
@@ -62,8 +60,6 @@ function App() {
             {input: newUser}
           )
         )
-
-      // if no user in DB with id, create one
       }
     }
       fetchUser();
