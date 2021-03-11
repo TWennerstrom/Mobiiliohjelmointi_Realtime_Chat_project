@@ -7,7 +7,7 @@ import {Fontisto} from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ChatsScreen from '../screens/ChatsScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import StatusScreen from '../screens/StatusScreen';
 import { TopTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const TopTab = createMaterialTopTabNavigator<TopTabParamList>();
@@ -46,7 +46,7 @@ export default function BottomTabNavigator() {
       />
        <TopTab.Screen
         name="Status"
-        component={TabTwoNavigator}
+        component={StatusScreen}
       />
     </TopTab.Navigator>
   );
@@ -71,19 +71,5 @@ function TabOneNavigator() {
         options={{ headerTitle: 'Tab One Title' }}
       />
     </TabOneStack.Navigator>
-  );
-}
-
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
-
-function TabTwoNavigator() {
-  return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
-      />
-    </TabTwoStack.Navigator>
   );
 }
