@@ -5,7 +5,7 @@ import styles from './style';
 import { MaterialCommunityIcons, FontAwesome5, Entypo, Fontisto, MaterialIcons } from '@expo/vector-icons';
 import { API, Auth, graphqlOperation } from 'aws-amplify';
 
-import { createMessage } from '../../src/graphql/mutations';
+import { createMessage, updateChatRoom } from '../../src/graphql/mutations';
 
 const InputBox = (props) => {
 
@@ -26,9 +26,26 @@ const InputBox = (props) => {
         console.warn ('Microphone')
     }
 
-    const onSendPress = async () => {
+    const updateChatRoomLastMessage = async (messageID: String) => {
         try {
             await API.graphql(
+                graphqlOperation(
+                    updateChatRoom, {
+                        input: {
+                            id: chatRoomID,
+                            lastMessageID: messageID,
+                        }
+                    }
+                )
+            )
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const onSendPress = async () => {
+        try {
+            const newMessageData = await API.graphql(
                 graphqlOperation(
                     createMessage, {
                         input: {
@@ -39,6 +56,7 @@ const InputBox = (props) => {
                     }
                 )
             )
+            await updateChatRoomLastMessage(newMessageData.data.createMessage.id);
         }catch (e) {
             console.log(e);
         }

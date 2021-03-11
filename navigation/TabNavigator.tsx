@@ -6,7 +6,7 @@ import {Fontisto} from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ChatScreen from '../screens/ChatScreen';
+import ChatsScreen from '../screens/ChatsScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { TopTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -42,7 +42,7 @@ export default function BottomTabNavigator() {
       />
       <TopTab.Screen
         name="Chats"
-        component={ChatScreen}
+        component={ChatsScreen}
       />
        <TopTab.Screen
         name="Status"
@@ -67,7 +67,7 @@ function TabOneNavigator() {
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="Chats"
-        component={ChatScreen}
+        component={ChatsScreen}
         options={{ headerTitle: 'Tab One Title' }}
       />
     </TabOneStack.Navigator>
