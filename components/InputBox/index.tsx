@@ -45,7 +45,7 @@ const InputBox = (props) => {
 
     const onSendPress = async () => {
         try {
-            const newMessageData = await API.graphql(
+            const newMessageData : any = await API.graphql(
                 graphqlOperation(
                     createMessage, {
                         input: {

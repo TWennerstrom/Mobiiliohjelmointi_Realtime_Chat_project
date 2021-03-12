@@ -18,7 +18,7 @@ const ContactListItem = (props: ContactListItemProps) => {
 
     const onClick = async () => {
         try {
-            const newChatRoomData = await API.graphql(
+            const newChatRoomData : any = await API.graphql(
                 graphqlOperation(
                     createChatRoom, {
                         input: {
@@ -72,7 +72,7 @@ const ContactListItem = (props: ContactListItemProps) => {
         <TouchableWithoutFeedback onPress={onClick}>
         <View style={styles.container}>
             <View style={styles.leftContainer}>
-            <Image source={{ uri: user.imageUri }} style={styles.avatar} />
+            <Image source={{uri: `${user.imageUri}`}} style={styles.avatar} />
             
         <View style={styles.midContainer}>   
             <Text style={styles.username}>{user.name}</Text>

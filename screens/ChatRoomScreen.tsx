@@ -14,10 +14,10 @@ const ChatRoomScreen = () => {
     const [messages, setMessages] = useState([]);
     const [myID, setMyID] = useState("");
 
-    const route = useRoute();
+    const route : any = useRoute();
 
     const fetchMessages = async () => {
-        const messagesData = await API.graphql(
+        const messagesData : any = await API.graphql(
           graphqlOperation(
             messagesByChatRoom, {
               chatRoomID: route.params.id,
@@ -30,7 +30,7 @@ const ChatRoomScreen = () => {
 
     useEffect( () => {
         const fetchMessages = async () => {
-            const messagesData = await API.graphql(
+            const messagesData : any = await API.graphql(
                 graphqlOperation(
                     messagesByChatRoom, {
                         chatRoomID: route.params.id,

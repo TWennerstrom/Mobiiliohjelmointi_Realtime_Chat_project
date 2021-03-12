@@ -22,9 +22,9 @@ Amplify.configure({
 const randomImages = [
   'https://hieumobile.com/wp-content/uploads/avatar-among-us-2.jpg',
   'https://hieumobile.com/wp-content/uploads/avatar-among-us-3.jpg',
-  'https://hieumobile.com/wp-content/uploads/avatar-among-us-6.png',
-  'https://hieumobile.com/wp-content/uploads/avatar-among-us-8.png',
-  'https://hieumobile.com/wp-content/uploads/avatar-among-us-9.png',
+  'https://hieumobile.com/wp-content/uploads/avatar-among-us-6.jpg',
+  'https://hieumobile.com/wp-content/uploads/avatar-among-us-8.jpg',
+  'https://hieumobile.com/wp-content/uploads/avatar-among-us-9.jpg',
 ]
 
 function App() {

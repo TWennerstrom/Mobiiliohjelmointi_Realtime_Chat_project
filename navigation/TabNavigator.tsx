@@ -1,6 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import {Fontisto} from '@expo/vector-icons';
 
@@ -8,7 +6,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ChatsScreen from '../screens/ChatsScreen';
 import StatusScreen from '../screens/StatusScreen';
-import { TopTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import CameraScreen from '../screens/CameraScreen';
+import { TopTabParamList } from '../types';
 
 const TopTab = createMaterialTopTabNavigator<TopTabParamList>();
 
@@ -34,7 +33,7 @@ export default function BottomTabNavigator() {
       }}>
       <TopTab.Screen
         name="Camera"
-        component={TabOneNavigator}
+        component={CameraScreen}
         options={{
           tabBarIcon: ({ color }) => <Fontisto name="camera" color={color} size={18} />,
           tabBarLabel: () => null
@@ -49,27 +48,5 @@ export default function BottomTabNavigator() {
         component={StatusScreen}
       />
     </TopTab.Navigator>
-  );
-}
-
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
-
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
-
-function TabOneNavigator() {
-  return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="Chats"
-        component={ChatsScreen}
-        options={{ headerTitle: 'Tab One Title' }}
-      />
-    </TabOneStack.Navigator>
   );
 }
