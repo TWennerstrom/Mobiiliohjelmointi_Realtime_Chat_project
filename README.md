@@ -17,7 +17,7 @@ Future development:
 - Adding multiple people to a chat room
 
 
-  "dependencies": {
+  dependencies:
     "@expo/vector-icons": "^12.0.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/netinfo": "5.9.7",
@@ -47,12 +47,10 @@ Future development:
     "react-native-screens": "~2.15.0",
     "react-native-tab-view": "^3.0.0",
     "react-native-web": "~0.13.12"
-  },
-  "devDependencies": {
+  
+  devDependencies:
     "@babel/core": "~7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "jest-expo": "~40.0.0",
     "typescript": "~4.0.0"
-  },
-  
